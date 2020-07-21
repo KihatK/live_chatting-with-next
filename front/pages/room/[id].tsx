@@ -16,24 +16,6 @@ export interface Chat {
     content: string,
 };
 
-const chats = [{
-    nickname: 'system',
-    content: 'Kihat님께서 입장하셨습니다.',
-    me: false,
-}, {
-    nickname: 'TiredKihat',
-    content: 'Hello',
-    me: false,
-}, {
-    nickname: 'NewKihat',
-    content: 'Hello there',
-    me: false,
-}, {
-    nickname: 'Kihat',
-    content: 'Bye',
-    me: true,
-}];
-
 const fetcher = (url: string) => axios.get(url).then((result) => result.data);
 
 const socket = io('http://localhost:3065/chat');

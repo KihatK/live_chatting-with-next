@@ -2,7 +2,6 @@ const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const ColorHash = require('color-hash');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const passport = require('passport');
@@ -51,4 +50,4 @@ const server = app.listen(3065, () => {
     console.log('Server is running on port 3065');
 });
 
-socket(server, app, sessionMiddleware);
+socket(server, app);
