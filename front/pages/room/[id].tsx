@@ -55,6 +55,14 @@ const chat = () => {
                 data: data.sendChat,
             });
         });
+        return () => {  //해당 컴포넌트가 사라졌을 때 socket.on 내용도 없애기
+            socket.off('backMsg', (data: any) => {
+                dispatch({
+                    type: ADD_CHAT,
+                    data: data.sendChat,
+                });
+            }
+        }
     }, []);
 
     return (
